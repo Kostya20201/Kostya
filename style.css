@@ -1,0 +1,49 @@
+/* External stylesheet */
+
+/* Main layout */
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+.left-column, .right-column {
+    width: 48%;
+}
+
+/* Контейнер с элементами */
+.content-box {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    gap: 10px; /* Промежуток между элементами */
+    margin: 20px 0; /* Отступ сверху и снизу */
+}
+
+/* Элементы внутри контейнера */
+.content-box div {
+    flex: 0 0 60px; /* Базовая ширина элемента 60px */
+    height: 60px;
+    background-color: orange;
+    position: relative; /* Позволяет позиционировать дочерние элементы относительно этого контейнера */
+}
+
+/* Нумерация в верхнем левом углу */
+.content-box div::before {
+    content: attr(data-number); /* Использует атрибут data-number для отображения числа */
+    position: absolute; /* Позволяет позиционировать элемент точно */
+    top: 5px; /* Отступ от верхнего края */
+    left: 5px; /* Отступ от левого края */
+    color: black; /* Цвет текста */
+}
+
+/* Первый элемент с зеленым фоном */
+.content-box div:first-child {
+    background-color: green;
+}
+
+/* Девятый элемент занимает всю ширину */
+.content-box div:nth-child(9) {
+    flex-basis: 100%; /* Занимает всю ширину */
+    height: 60px;
+    background-color: green;
+    margin-top: 10px;
+}
