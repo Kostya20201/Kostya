@@ -1,15 +1,17 @@
-/* External stylesheet */
-
 /* Main layout */
 .main-content {
-    display: flex;
-    gap: 20px;
+    overflow: hidden; /* Очистка float */
 }
 
-.left-column, .right-column {
-    width: 48%;
+.left-column {
+    width: 50%;  /* Примерный размер левой колонки */
+    padding-right: 10px; /* Чтобы был отступ перед линией */
 }
 
+.right-column {
+    width: 50%;  /* Примерный размер правой колонки */
+    margin-left: 10px; /* Сдвиг линии на 10 пикселей влево */
+}
 /* Контейнер с элементами */
 .content-box {
     display: flex;
