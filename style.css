@@ -117,3 +117,17 @@ input[type="submit"]:hover {
     display: table;
     clear: both; /* Очищает флоаты, чтобы родительский контейнер не "терял" высоту */
 }
+
+/* Фіксоване позиціонування */
+
+.fixed-element {
+    position: fixed; /* Фіксоване позиціонування */
+    top: 10px; /* Зміщення від верхнього краю */
+    right: 10px; /* Зміщення від правого краю */
+    padding: 20px;
+    background-color: rgba(0, 128, 0, 0.8); /* Напівпрозорий зелений фон */
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Тінь для кращої видимості */
+}
