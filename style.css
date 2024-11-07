@@ -49,3 +49,54 @@
     background-color: green;
     margin-top: 10px;
 }
+
+
+/* Загальні стилі для чекбоксів */
+input[type="checkbox"] {
+    display: none; /* Сховуємо стандартний чекбокс */
+}
+
+/* Стилі для міток (label) */
+label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff; /* Білий фон для невибраного чекбокса */
+    border: 2px solid #ccc; /* Світло-сіра межа для міток */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Анімація для фону, кольору та меж */
+}
+
+/* Стилі для мітки при вибраному чекбоксі */
+input[type="checkbox"]:checked + label {
+    background-color: #4CAF50; /* Зелений фон */
+    color: white; /* Білий текст */
+    border-color: #388E3C; /* Темно-зелена межа при виборі */
+}
+
+/* Стилі для мітки при невибраному чекбоксі */
+input[type="checkbox"]:not(:checked) + label {
+    background-color: #fff; /* Білий фон */
+    color: #333; /* Темний текст */
+    border-color: #ccc; /* Світло-сіра межа при невиборі */
+}
+
+/* Стилі для форми */
+form {
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: white; /* Білий фон */
+    color: #333; /* Темний текст */
+    border: 2px solid #ccc; /* Світло-сіра межа */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #f0f0f0; /* Світло-сірий фон при наведенні */
+    border-color: #888; /* Темніша межа при наведенні */
+}
