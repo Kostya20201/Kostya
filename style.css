@@ -1,3 +1,5 @@
+/* Контейнер*/
+
 /* Main layout */
 .main-content {
     overflow: hidden; /* Очистка float */
@@ -50,6 +52,7 @@
     margin-top: 10px;
 }
 
+/* Чекбоксы */
 
 /* Загальні стилі для чекбоксів */
 input[type="checkbox"] {
@@ -99,4 +102,18 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #f0f0f0; /* Світло-сірий фон при наведенні */
     border-color: #888; /* Темніша межа при наведенні */
+}
+
+/* Float */
+
+.floating-img {
+    float: left;  /* Изображение будет плавать слева */
+    margin-right: 20px; /* Отступ справа, чтобы текст не прилипал */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.right-column::after {
+    content: "";
+    display: table;
+    clear: both; /* Очищает флоаты, чтобы родительский контейнер не "терял" высоту */
 }
