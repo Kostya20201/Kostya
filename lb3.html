@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Page</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    td {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      border: 1px solid rgb(0, 0, 0);
+    }
+    .dark {
+    background-color: #333;
+    color: red; /* Змінити колір цифр у темних клітинках */
+    }
+    .light {
+    background-color: #eee;
+    color: blue; /* Змінити колір цифр у світлих клітинках */
+    }
+  </style>
+</head>
+<body>
+  <h1>Лабораторна робота №3</h1>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+        <h2 style="color: black;">Встановити інтервал зміни зображення в секундах</h2>
+      <input type="number" id="interval-input">
+      <button onclick="setImageInterval()">Інтервал</button>
+    </div>
+  </div>  
+
+  <img id="dynamic-image" src="image1.jpg" alt="Image" width="300" style="margin: 20px 0;">
+
+  <h2>Таблица 10 х 10</h2>
+  <label for="min-value">Min значення:</label>
+  <input type="number" id="min-значення">
+  <label for="max-value">Max значення:</label>
+  <input type="number" id="max-значення">
+  <button onclick="generateTable()">Сгенерувати таблицю</button>
+
+  <table id="dynamic-table"></table>
+
+  <script src="script.js"></script>
+</body>
+</html>
