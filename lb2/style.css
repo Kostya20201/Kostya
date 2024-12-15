@@ -1,0 +1,133 @@
+/* Контейнер*/
+
+/* Main layout */
+.main-content {
+    overflow: hidden; /* Очистка float */
+}
+
+.left-column {
+    width: 50%;  /* Примерный размер левой колонки */
+    padding-right: 10px; /* Чтобы был отступ перед линией */
+}
+
+.right-column {
+    width: 50%;  /* Примерный размер правой колонки */
+    margin-left: 10px; /* Сдвиг линии на 10 пикселей влево */
+}
+/* Контейнер с элементами */
+.content-box {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    gap: 10px; /* Промежуток между элементами */
+    margin: 20px 0; /* Отступ сверху и снизу */
+}
+
+/* Элементы внутри контейнера */
+.content-box div {
+    flex: 0 0 60px; /* Базовая ширина элемента 60px */
+    height: 60px;
+    background-color: orange;
+    position: relative; /* Позволяет позиционировать дочерние элементы относительно этого контейнера */
+}
+
+/* Нумерация в верхнем левом углу */
+.content-box div::before {
+    content: attr(data-number); /* Использует атрибут data-number для отображения числа */
+    position: absolute; /* Позволяет позиционировать элемент точно */
+    top: 5px; /* Отступ от верхнего края */
+    left: 5px; /* Отступ от левого края */
+    color: black; /* Цвет текста */
+}
+
+/* Первый элемент с зеленым фоном */
+.content-box div:first-child {
+    background-color: green;
+}
+
+/* Девятый элемент занимает всю ширину */
+.content-box div:nth-child(9) {
+    flex-basis: 100%; /* Занимает всю ширину */
+    height: 60px;
+    background-color: green;
+    margin-top: 10px;
+}
+
+/* Чекбоксы */
+
+/* Загальні стилі для чекбоксів */
+input[type="checkbox"] {
+    display: none; /* Сховуємо стандартний чекбокс */
+}
+
+/* Стилі для міток (label) */
+label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff; /* Білий фон для невибраного чекбокса */
+    border: 2px solid #ccc; /* Світло-сіра межа для міток */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Анімація для фону, кольору та меж */
+}
+
+/* Стилі для мітки при вибраному чекбоксі */
+input[type="checkbox"]:checked + label {
+    background-color: #4CAF50; /* Зелений фон */
+    color: white; /* Білий текст */
+    border-color: #388E3C; /* Темно-зелена межа при виборі */
+}
+
+/* Стилі для мітки при невибраному чекбоксі */
+input[type="checkbox"]:not(:checked) + label {
+    background-color: #fff; /* Білий фон */
+    color: #333; /* Темний текст */
+    border-color: #ccc; /* Світло-сіра межа при невиборі */
+}
+
+/* Стилі для форми */
+form {
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: white; /* Білий фон */
+    color: #333; /* Темний текст */
+    border: 2px solid #ccc; /* Світло-сіра межа */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #f0f0f0; /* Світло-сірий фон при наведенні */
+    border-color: #888; /* Темніша межа при наведенні */
+}
+
+/* Float */
+
+.floating-img {
+    float: left;  /* Изображение будет плавать слева */
+    margin-right: 20px; /* Отступ справа, чтобы текст не прилипал */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.right-column::after {
+    content: "";
+    display: table;
+    clear: both; /* Очищает флоаты, чтобы родительский контейнер не "терял" высоту */
+}
+
+/* Фіксоване позиціонування */
+
+.fixed-element {
+    position: fixed; /* Фіксоване позиціонування */
+    top: 10px; /* Зміщення від верхнього краю */
+    right: 10px; /* Зміщення від правого краю */
+    padding: 20px;
+    background-color: rgba(0, 128, 0, 0.8); /* Напівпрозорий зелений фон */
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Тінь для кращої видимості */
+}
